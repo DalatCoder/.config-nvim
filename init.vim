@@ -146,3 +146,6 @@ nmap <leader>t :NERDTreeToggle<CR>
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 nnoremap <F5> :checktime<CR>
+
+" For loading prettier
+packloadall

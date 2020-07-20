@@ -1,3 +1,5 @@
+packloadall
+
 color dracula
 
 set nu
@@ -62,6 +64,16 @@ let g:nerdtree_tabs_autofind = 0
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+"Config for prettier 
+let g:prettier#config#print_width = 80 
+let g:prettier#config#tab_wdidth = 2 
+
+" when running at every change you may want to disable quickfix
+let g:prettier#quickfix_enabled = 0
+
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 let g:indentLine_color_term = 100
 let g:indentLine_bgcolor_term = 330
@@ -147,5 +159,3 @@ map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 nnoremap <F5> :checktime<CR>
 
-" For loading prettier
-packloadall

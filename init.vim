@@ -70,10 +70,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:prettier#config#print_width = 80 
 let g:prettier#config#tab_wdidth = 2 
 
-" when running at every change you may want to disable quickfix
-let g:prettier#quickfix_enabled = 0
-
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 let g:indentLine_color_term = 100
 let g:indentLine_bgcolor_term = 330
@@ -106,27 +102,6 @@ let g:lightline = {
       \ },
       \ }
 
-function! s:save_buffer() abort
-  if empty(&buftype) && !empty(bufname(''))
-    let l:savemarks = {
-          \ "'[": getpos("'["),
-          \ "']": getpos("']")
-          \ }
-
-    silent! update
-
-    for [l:key, l:value] in items(l:savemarks)
-      call setpos(l:key, l:value)
-    endfor
-  endif
-endfunction
-
-augroup save_buffer
-  autocmd!
-  autocmd InsertLeave,TextChanged * nested call s:save_buffer()
-  autocmd FocusGained,BufEnter,CursorHold * silent! checktime
-augroup end
-
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
 
@@ -152,7 +127,9 @@ let g:ale_linters = {
 let mapleader=" "
 map <leader>r :source ~/.vim/vimrc<CR>
 
-map <leader>s :NERDTree<CR>
+map <leader>s :wa<CR>
+map <leader>q :q<CR>
+map <leader>p :Prettier<CR>
 map <leader>f :NERDTreeFind<CR>
 nmap <leader>t :NERDTreeToggle<CR>
 map <leader>n <plug>NERDTreeTabsToggle<CR>

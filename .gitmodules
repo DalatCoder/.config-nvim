@@ -40,3 +40,6 @@
 [submodule "pack/plugins/start/emme-vim"]
 	path = pack/plugins/start/emme-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "pack/plugins/start/ctrlp.vim"]
+	path = pack/plugins/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim

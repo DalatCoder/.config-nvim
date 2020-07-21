@@ -69,6 +69,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "Config for prettier 
 let g:prettier#config#print_width = 80 
 let g:prettier#config#tab_wdidth = 2 
+let g:prettier#config#single_quote = 'true'
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 
 let g:indentLine_color_term = 100
@@ -134,7 +138,7 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = '0'
 
 let mapleader=" "
 map <leader>r :source ~/.vim/vimrc<CR>

@@ -71,7 +71,7 @@ let g:prettier#config#print_width = 80
 let g:prettier#config#tab_wdidth = 2 
 let g:prettier#config#single_quote = 'true'
 
-let g:prettier#autoformat = 0
+let g:prettier#auto= 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 
@@ -145,7 +145,7 @@ map <leader>r :source ~/.vim/vimrc<CR>
 
 map <leader>s :wa<CR>
 map <leader>q :q<CR>
-map <leader>p :Prettier<CR>
+map <leader>p :PrettierAsync<CR>
 map <leader>f :NERDTreeFind<CR>
 nmap <leader>t :NERDTreeToggle<CR>
 map <leader>n <plug>NERDTreeTabsToggle<CR>

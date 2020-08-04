@@ -49,3 +49,6 @@
 [submodule "pack/plugins/start/vim-javascript"]
 	path = pack/plugins/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule "pack/plugins/start/gruvbox"]
+	path = pack/plugins/start/gruvbox
+	url = https://github.com/morhetz/gruvbox

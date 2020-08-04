@@ -1,6 +1,7 @@
 packloadall
 
-color dracula
+"color dracula
+colorscheme gruvbox
 
 set nu
 set relativenumber
@@ -65,7 +66,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
 "Config for prettier 
 let g:prettier#config#print_width = 80 
 let g:prettier#config#tab_wdidth = 2 
@@ -77,9 +77,9 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 " Config for javascript syntax highlight 
 let g:javascript_plugin_jsdoc = 1
 
-let g:indentLine_color_term = 100
-let g:indentLine_bgcolor_term = 330
-let g:indentLine_color_gui = '#ff0000'
+"let g:indentLine_color_term = 100
+"let g:indentLine_bgcolor_term = 330
+"let g:indentLine_color_gui = '#ff0000'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_concealcursor = 'inc'
 let g:indentLine_conceallevel = 2
@@ -91,7 +91,7 @@ let g:ale_sign_column_always = 1
 let g:lightline = {}
 
 let g:lightline = {
-      \ 'colorscheme': 'Dracula',
+      \ 'colorscheme': 'Gruvbox',
       \ 'active': {
       \   'left': [
       \               [ 'mode', 'paste' ],
@@ -142,9 +142,11 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 let g:ctrlp_working_path_mode = '0'
 
+
 let mapleader=" "
 map <leader>r :source ~/.vim/vimrc<CR>
 
+map <leader>d ciw
 map <leader>s :wa<CR>
 map <leader>q :q<CR>
 map <leader>p :PrettierAsync<CR>

@@ -31,7 +31,7 @@ set showmode
 
 set encoding=utf-8 nobomb
 
-syntax on
+syntax enable
 set syntax=whitespace
 
 filetype plugin indent on
@@ -141,6 +141,15 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 let g:ctrlp_working_path_mode = '0'
+
+" Italic comment
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+highlight Comment cterm=italic
+
+let g:vim_jsx_pretty_template_tags = ['html', 'jsx']
+
+nmap <F8> :TagbarToggle<CR>
 
 
 let mapleader=" "

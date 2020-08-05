@@ -61,3 +61,9 @@
 [submodule "pack/plugins/start/tagbar"]
 	path = pack/plugins/start/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule "pack/plugins/start/yats.vim"]
+	path = pack/plugins/start/yats.vim
+	url = https://github.com/HerringtonDarkholme/yats.vim.git
+[submodule "/home/nth/.config/nvim/pack/plugins/start/typescript-vim"]
+	path = /home/nth/.config/nvim/pack/plugins/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim

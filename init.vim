@@ -15,6 +15,7 @@ Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -41,6 +42,9 @@ set relativenumber
 set autoread
 set autowrite
 
+" Turn off autocomment
+set formatoptions-=cro
+
 if has('mouse')
   set mouse=a
 endif
@@ -62,7 +66,7 @@ set showmode
 
 set encoding=utf-8 nobomb
 
-syntax enable
+syntax on
 set syntax=whitespace
 
 filetype plugin indent on
@@ -117,7 +121,7 @@ let g:ale_sign_column_always = 1
 let g:lightline = {}
 
 let g:lightline = {
-      \ 'colorscheme': 'Gruvbox',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [
       \               [ 'mode', 'paste' ],

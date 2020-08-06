@@ -32,10 +32,6 @@ Plug 'morhetz/gruvbox'
 " Initialize plugin system
 call plug#end()
 
-
-packloadall
-
-"color dracula
 colorscheme gruvbox
 
 set nu
@@ -101,13 +97,8 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"Config for prettier 
-let g:prettier#config#print_width = 80 
-let g:prettier#config#tab_wdidth = 2 
-let g:prettier#config#single_quote = 'true'
-
-let g:prettier#auto= 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+" Setup prettier command via coc-pretter 
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Config for javascript syntax highlight 
 let g:javascript_plugin_jsdoc = 1
@@ -177,11 +168,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 let g:ctrlp_working_path_mode = '0'
 
-" Italic comment
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-highlight Comment cterm=italic
-
 let g:vim_jsx_pretty_template_tags = ['html', 'jsx']
 
 nmap <F8> :TagbarToggle<CR>
@@ -193,7 +179,6 @@ map <leader>r :source ~/.vim/vimrc<CR>
 map <leader>d ciw
 map <leader>s :wa<CR>
 map <leader>q :q<CR>
-map <leader>p :PrettierAsync<CR>
 map <leader>f :NERDTreeFind<CR>
 nmap <leader>t :NERDTreeToggle<CR>
 map <leader>n <plug>NERDTreeTabsToggle<CR>

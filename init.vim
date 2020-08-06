@@ -183,7 +183,7 @@ map <leader>q :q<CR>
 map <leader>f :NERDTreeFind<CR>
 nmap <leader>t :NERDTreeToggle<CR>
 map <leader>n <plug>NERDTreeTabsToggle<CR>
-map <leader>k :call OpenFloatTerm()
+map <leader>k :call OpenFloatTerm()<CR>
 
 nnoremap <F5> :checktime<CR>
 

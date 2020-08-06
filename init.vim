@@ -1,3 +1,38 @@
+
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'itchyny/vim-gitbranch'
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'yggdroot/indentline'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'mattn/emmet-vim'
+
+Plug 'pangloss/vim-javascript'
+
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+
+Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'morhetz/gruvbox'
+
+" Initialize plugin system
+call plug#end()
+
+
 packloadall
 
 "color dracula

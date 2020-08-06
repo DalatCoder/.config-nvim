@@ -1,5 +1,7 @@
 # Fork from: https://github.com/ndaidong/vim
 
+#Update: Use VimPlug to manage vim plugins
+
 # nvim
 My nvim configuration & plugins using git module.
 

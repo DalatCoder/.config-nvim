@@ -12,12 +12,15 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'yggdroot/indentline'
+Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'shinchu/lightline-gruvbox.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'wakatime/vim-wakatime'
 
 Plug 'mattn/emmet-vim'
 
@@ -49,7 +52,6 @@ if has('mouse')
   set mouse=a
 endif
 
-set nobackup
 set nowb
 set noswapfile
 set backupdir=~/tmp,/tmp
@@ -234,11 +236,13 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
+
 " from readme
 " if hidden is not set, TextEdit might fail.
 set hidden 
 
-" Some servers have issues with backup files, see #649 set nobackup 
+" Some servers have issues with backup files, see #649 
+set nobackup 
 set nowritebackup 
 
 " Better display for messages 
@@ -343,23 +347,4 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Using CocList
-" Show all diagnostics
-" nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-" nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
-" nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-" nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-" nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-" nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-" nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-" nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}

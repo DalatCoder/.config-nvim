@@ -192,6 +192,7 @@ map <leader>n <plug>NERDTreeTabsToggle<CR>
 map <leader>k :call OpenFloatTerm()<CR>
 
 nnoremap <F5> :checktime<CR>
+nnoremap <leader> :w<CR>
 inoremap jj <esc>
 
 " float terminal

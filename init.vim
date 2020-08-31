@@ -20,8 +20,6 @@ Plug 'shinchu/lightline-gruvbox.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'wakatime/vim-wakatime'
-
 Plug 'mattn/emmet-vim'
 
 Plug 'pangloss/vim-javascript'
@@ -179,7 +177,7 @@ let g:vim_jsx_pretty_template_tags = ['html', 'jsx']
 nmap <F8> :TagbarToggle<CR>
 
 
-let mapleader=" "
+let mapleader=","
 map <leader>r :source ~/.vim/vimrc<CR>
 
 
@@ -192,7 +190,7 @@ map <leader>n <plug>NERDTreeTabsToggle<CR>
 map <leader>k :call OpenFloatTerm()<CR>
 
 nnoremap <F5> :checktime<CR>
-nnoremap <leader> :w<CR>
+nnoremap <space> :w<CR>
 inoremap jj <esc>
 
 " float terminal

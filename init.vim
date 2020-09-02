@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -176,6 +177,13 @@ let g:vim_jsx_pretty_template_tags = ['html', 'jsx']
 
 nmap <F8> :TagbarToggle<CR>
 
+" Emmet config
+let g:user_emmet_settings = {
+  \ 'javascript': {
+    \ 'extends': 'jsx'
+  \   }
+  \ }
+
 
 let mapleader=","
 map <leader>r :source ~/.vim/vimrc<CR>
@@ -226,6 +234,35 @@ function! OpenFloatTerm()
   " Hook up TermClose event to close both terminal and border windows
   autocmd TermClose * ++once :q | call nvim_win_close(s:border_win, v:true)
 endfunction
+
+" Better Rainbow Parentheses
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+
+" Always active rainbow parenthese
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " coc config
 let g:coc_global_extensions = [
